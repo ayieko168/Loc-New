@@ -21,7 +21,8 @@
 
 // you can change the pin numbers to match your wiring:
 //SoftwareSerial mySerial(8, 7);
-SoftwareSerial mySerial(13, 12);
+SoftwareSerial mySerial(13, 12); //ACTUAL
+//SoftwareSerial mySerial(12, 13);
 Adafruit_GPS GPS(&mySerial);
 
 // Set GPSECHO to 'false' to turn off echoing the GPS data to the Serial console
@@ -103,10 +104,10 @@ void loop()                     // run over and over again
     Serial.print("Fix: "); Serial.print((int)GPS.fix);
     Serial.print(" quality: "); Serial.println((int)GPS.fixquality);
     if (GPS.fix) {
-      Serial.print("Location: ");
-      Serial.print(GPS.latitude, 4); Serial.print(GPS.lat);
+      Serial.print("Location (in degrees, works with Google Maps): ");
+      Serial.print(GPS.latitudeDegrees, 6);
       Serial.print(", ");
-      Serial.print(GPS.longitude, 4); Serial.println(GPS.lon);
+      Serial.println(GPS.longitudeDegrees, 6);
 
       Serial.print("Speed (knots): "); Serial.println(GPS.speed);
       Serial.print("Angle: "); Serial.println(GPS.angle);

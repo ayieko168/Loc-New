@@ -1,7 +1,7 @@
-// Working Vertion
 
 #include <SoftwareSerial.h>
 
+//
 String apn = "safaricom";                               //APN
 String apn_u = "saf";                                   //APN-Username
 String apn_p = "data";                                  //APN-Password
